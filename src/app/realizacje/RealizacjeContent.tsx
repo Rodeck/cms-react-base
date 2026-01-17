@@ -3,7 +3,7 @@
 import { useState, useCallback, useEffect } from "react";
 import Image from "next/image";
 import { urlFor } from "@/sanity/lib/image";
-import type { Realizacja, ProjectType, RealizacjaImage } from "@/sanity/types/realizacja";
+import type { Realizacja, ProjectType } from "@/sanity/types/realizacja";
 import { projectTypeTranslations } from "@/sanity/types/realizacja";
 
 const categories: { id: "all" | ProjectType; label: string }[] = [
