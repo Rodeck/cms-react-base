@@ -32,7 +32,8 @@ function getLocationString(location: Listing["location"]): string {
 }
 
 export default async function HousesForSalePage() {
-  const { data: listings } = await sanityFetch<Listing[]>({ query: listingsQuery });
+  const { data } = await sanityFetch({ query: listingsQuery });
+  const listings = data as Listing[];
   const availableCount = listings.filter((l) => l.status === "for-sale").length;
 
   return (

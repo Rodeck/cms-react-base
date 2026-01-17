@@ -96,9 +96,10 @@ const stats = [
 ];
 
 export default async function Home() {
-  const { data: realizacje } = await sanityFetch<Realizacja[]>({
+  const { data } = await sanityFetch({
     query: featuredRealizacjeQuery,
   });
+  const realizacje = data as Realizacja[];
 
   return (
     <>

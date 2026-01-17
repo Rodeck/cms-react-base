@@ -61,10 +61,11 @@ function getFullLocation(location: Listing["location"]): string {
 
 export default async function ListingDetailPage({ params }: PageProps) {
   const { slug } = await params;
-  const { data: listing } = await sanityFetch<Listing | null>({
+  const { data } = await sanityFetch({
     query: listingBySlugQuery,
     params: { slug },
   });
+  const listing = data as Listing | null;
 
   if (!listing) {
     notFound();

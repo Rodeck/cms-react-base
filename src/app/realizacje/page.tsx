@@ -12,9 +12,10 @@ export const metadata = {
 export const dynamic = "force-dynamic";
 
 export default async function RealizacjePage() {
-  const { data: realizacje } = await sanityFetch<Realizacja[]>({
+  const { data } = await sanityFetch({
     query: realizacjeQuery,
   });
+  const realizacje = data as Realizacja[];
 
   return <RealizacjeContent realizacje={realizacje} />;
 }
