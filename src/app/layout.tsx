@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { SanityLive } from "@/sanity/lib/live";
 
 const inter = Inter({
   subsets: ["latin", "latin-ext"],
@@ -42,6 +43,7 @@ export default function RootLayout({
         <Navigation />
         <main className="pt-20">{children}</main>
         <Footer />
+        <SanityLive />
       </body>
     </html>
   );

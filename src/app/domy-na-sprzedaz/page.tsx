@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { client } from "@/sanity/lib/client";
+import { sanityFetch } from "@/sanity/lib/live";
 import { urlFor } from "@/sanity/lib/image";
 import { listingsQuery } from "@/sanity/lib/queries";
 import type { Listing } from "@/sanity/types/listing";
@@ -14,9 +14,6 @@ export const metadata: Metadata = {
   description:
     "Gotowe domy na sprzedaż od Jeżyk Remonty. Nowe budownictwo, wykończenie pod klucz, atrakcyjne lokalizacje.",
 };
-
-// Revalidate every 60 seconds
-export const revalidate = 60;
 
 function formatPrice(price: number): string {
   return new Intl.NumberFormat("pl-PL", {
@@ -35,7 +32,7 @@ function getLocationString(location: Listing["location"]): string {
 }
 
 export default async function HousesForSalePage() {
-  const listings = await client.fetch<Listing[]>(listingsQuery);
+  const { data: listings } = await sanityFetch<Listing[]>({ query: listingsQuery });
   const availableCount = listings.filter((l) => l.status === "for-sale").length;
 
   return (

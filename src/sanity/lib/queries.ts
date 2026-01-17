@@ -57,3 +57,54 @@ export const featuredListingsQuery = groq`
 export const listingsCountQuery = groq`
   count(*[_type == "listing" && status == "for-sale"])
 `;
+
+// Fetch all realizacje ordered by year (newest first)
+export const realizacjeQuery = groq`
+  *[_type == "realizacja"] | order(year desc) {
+    _id,
+    _createdAt,
+    _updatedAt,
+    title,
+    slug,
+    images,
+    projectType,
+    year,
+    squareMeters,
+    description
+  }
+`;
+
+// Fetch realizacje by project type
+export const realizacjeByTypeQuery = groq`
+  *[_type == "realizacja" && projectType == $projectType] | order(year desc) {
+    _id,
+    title,
+    slug,
+    images,
+    projectType,
+    year,
+    squareMeters,
+    description
+  }
+`;
+
+// Fetch a single realizacja by slug
+export const realizacjaBySlugQuery = groq`
+  *[_type == "realizacja" && slug.current == $slug][0] {
+    _id,
+    _createdAt,
+    _updatedAt,
+    title,
+    slug,
+    images,
+    projectType,
+    year,
+    squareMeters,
+    description
+  }
+`;
+
+// Count realizacje
+export const realizacjeCountQuery = groq`
+  count(*[_type == "realizacja"])
+`;

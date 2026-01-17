@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PortableText } from "@portabletext/react";
 import { client } from "@/sanity/lib/client";
+import { sanityFetch } from "@/sanity/lib/live";
 import { listingBySlugQuery, listingsQuery } from "@/sanity/lib/queries";
 import type { Listing } from "@/sanity/types/listing";
 import {
@@ -15,9 +16,6 @@ import ImageGallery from "@/components/ImageGallery";
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
-
-// Revalidate every 60 seconds
-export const revalidate = 60;
 
 // Generate static params for all listings
 export async function generateStaticParams() {
@@ -63,7 +61,10 @@ function getFullLocation(location: Listing["location"]): string {
 
 export default async function ListingDetailPage({ params }: PageProps) {
   const { slug } = await params;
-  const listing = await client.fetch<Listing | null>(listingBySlugQuery, { slug });
+  const { data: listing } = await sanityFetch<Listing | null>({
+    query: listingBySlugQuery,
+    params: { slug },
+  });
 
   if (!listing) {
     notFound();

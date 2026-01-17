@@ -3,7 +3,19 @@
     "allow": [
       "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-npm --yes)",
       "Bash(npm run build:*)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "mcp__Sanity__list_sanity_rules",
+      "mcp__Sanity__get_sanity_rules",
+      "mcp__Sanity__query_documents",
+      "mcp__Sanity__get_context",
+      "Bash(npx sanity:*)",
+      "mcp__Sanity__create_documents_from_json",
+      "mcp__Sanity__generate_image",
+      "mcp__Sanity__get_schema",
+      "mcp__Sanity__list_workspace_schemas",
+      "mcp__Sanity__patch_document_from_json",
+      "mcp__Sanity__get_document",
+      "mcp__Sanity__discard_drafts"
     ]
   }
 }
