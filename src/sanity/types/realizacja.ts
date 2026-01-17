@@ -2,10 +2,10 @@ import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 
 export type ProjectType = "budowa" | "remont" | "wykonczenia";
 
-export interface RealizacjaImage extends SanityImageSource {
+export type RealizacjaImage = SanityImageSource & {
   _key: string;
   alt?: string;
-}
+};
 
 export interface Realizacja {
   _id: string;
