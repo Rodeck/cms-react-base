@@ -130,7 +130,7 @@ export default async function HousesForSalePage() {
                 dowiedzieć się o nadchodzących ofertach.
               </p>
               <Link
-                href="/kontakt"
+                href="/kontakt?service=Kupno%20domu&message=Dzie%C5%84%20dobry%2C%20prosz%C4%99%20o%20wi%C4%99cej%20informacji%20o%20dost%C4%99pnych%20domach%20na%20sprzeda%C5%BC."
                 className="inline-flex items-center px-6 py-3 bg-black text-white font-medium rounded-full hover:bg-gray-800 transition-colors"
               >
                 Skontaktuj się z nami
@@ -464,7 +464,7 @@ export default async function HousesForSalePage() {
               Zadzwoń teraz
             </a>
             <Link
-              href="/kontakt"
+              href="/kontakt?service=Kupno%20domu&message=Dzie%C5%84%20dobry%2C%20prosz%C4%99%20o%20wi%C4%99cej%20informacji%20o%20dost%C4%99pnych%20domach%20na%20sprzeda%C5%BC."
               className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-medium rounded-full hover:bg-white hover:text-gray-900 transition-colors"
             >
               Wyślij zapytanie

@@ -292,7 +292,7 @@ export function RealizacjeContent({ realizacje }: RealizacjeContentProps) {
             stworzyć coś wyjątkowego.
           </p>
           <a
-            href="/kontakt"
+            href="/kontakt?service=Wycena%20prac&message=Dzie%C5%84%20dobry%2C%20prosz%C4%99%20o%20wycen%C4%99%20i%20om%C3%B3wienie%20mojego%20projektu."
             className="inline-flex items-center px-8 py-4 bg-white text-gray-900 font-medium rounded-full hover:bg-gray-100 transition-colors"
           >
             Rozpocznij projekt

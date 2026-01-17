@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 
@@ -22,8 +23,8 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-black rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-xl">JR</span>
+            <div className="w-12 h-12 rounded-full overflow-hidden bg-white flex items-center justify-center">
+              <Image src="/logo.svg" alt="Jeżyk Remonty" width={48} height={48} />
             </div>
             <div className="hidden sm:block">
               <span className="text-xl font-bold text-gray-900">Jeżyk Remonty</span>

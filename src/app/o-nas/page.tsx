@@ -143,7 +143,7 @@ export default function AboutPage() {
                   Zobacz nasze realizacje
                 </Link>
                 <Link
-                  href="/kontakt"
+                  href="/kontakt?service=Inne&message=Dzie%C5%84%20dobry%2C%20prosz%C4%99%20o%20kontakt%20w%20sprawie%20wsp%C3%B3%C5%82pracy."
                   className="inline-flex items-center px-6 py-3 border-2 border-gray-900 text-gray-900 font-medium rounded-full hover:bg-gray-900 hover:text-white transition-colors"
                 >
                   Kontakt
@@ -267,54 +267,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="text-sm font-medium text-gray-500 uppercase tracking-wider">
-              Nasz zespół
-            </span>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
-              Poznaj nas bliżej
-            </h2>
-            <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-              Nasz zespół to doświadczeni specjaliści, którzy z pasją podchodzą
-              do każdego projektu.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {team.map((member, index) => (
-              <div
-                key={index}
-                className="bg-gray-50 rounded-2xl p-8 text-center"
-              >
-                <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-6 placeholder-image">
-                  <svg
-                    className="w-12 h-12 text-gray-400"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1}
-                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                    />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-1">
-                  {member.name}
-                </h3>
-                <p className="text-gray-500 text-sm mb-4">{member.role}</p>
-                <p className="text-gray-600">{member.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-20 bg-black text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -326,7 +278,7 @@ export default function AboutPage() {
             przygotujemy wycenę i przedstawimy propozycję współpracy.
           </p>
           <Link
-            href="/kontakt"
+            href="/kontakt?service=Inne&message=Dzie%C5%84%20dobry%2C%20chcia%C5%82bym%2Fchcia%C5%82abym%20om%C3%B3wi%C4%87%20m%C3%B3j%20projekt."
             className="inline-flex items-center px-8 py-4 bg-white text-gray-900 font-medium rounded-full hover:bg-gray-100 transition-colors"
           >
             Skontaktuj się z nami

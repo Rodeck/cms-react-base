@@ -70,6 +70,11 @@ export default async function ListingDetailPage({ params }: PageProps) {
     notFound();
   }
 
+  const contactMessage = `Dzień dobry, proszę o więcej informacji o ofercie ${listing.title}.`;
+  const contactHref = `/kontakt?service=${encodeURIComponent("Kupno domu")}&message=${encodeURIComponent(
+    contactMessage
+  )}`;
+
   return (
     <>
       {/* Breadcrumb */}
@@ -304,7 +309,7 @@ export default async function ListingDetailPage({ params }: PageProps) {
 
                   {listing.status !== "sold" && (
                     <Link
-                      href="/kontakt"
+                      href={contactHref}
                       className="w-full inline-flex items-center justify-center px-6 py-4 bg-black text-white font-medium rounded-full hover:bg-gray-800 transition-colors"
                     >
                       Zapytaj o nieruchomość
@@ -388,7 +393,7 @@ export default async function ListingDetailPage({ params }: PageProps) {
               </div>
             </div>
             <Link
-              href="/kontakt"
+              href={contactHref}
               className="inline-flex items-center px-6 py-3 bg-black text-white font-medium rounded-full hover:bg-gray-800 transition-colors"
             >
               Zapytaj o dom

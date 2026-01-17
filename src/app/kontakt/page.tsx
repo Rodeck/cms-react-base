@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 const contactInfo = [
   {
@@ -99,6 +100,7 @@ const services = [
 ];
 
 export default function ContactPage() {
+  const searchParams = useSearchParams();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -108,6 +110,19 @@ export default function ContactPage() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  useEffect(() => {
+    const serviceParam = searchParams.get("service");
+    const messageParam = searchParams.get("message");
+
+    if (!serviceParam && !messageParam) return;
+
+    setFormData((prev) => ({
+      ...prev,
+      service: prev.service || serviceParam || "",
+      message: prev.message || messageParam || "",
+    }));
+  }, [searchParams]);
 
   const handleChange = (
     e: React.ChangeEvent<

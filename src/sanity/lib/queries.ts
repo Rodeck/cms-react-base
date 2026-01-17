@@ -74,6 +74,20 @@ export const realizacjeQuery = groq`
   }
 `;
 
+// Fetch featured realizacje (limit to 3)
+export const featuredRealizacjeQuery = groq`
+  *[_type == "realizacja"] | order(year desc)[0...3] {
+    _id,
+    title,
+    slug,
+    images,
+    projectType,
+    year,
+    squareMeters,
+    description
+  }
+`;
+
 // Fetch realizacje by project type
 export const realizacjeByTypeQuery = groq`
   *[_type == "realizacja" && projectType == $projectType] | order(year desc) {
