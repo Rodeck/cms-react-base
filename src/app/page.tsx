@@ -115,7 +115,7 @@ export default async function Home() {
           </div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-7">
+        <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-7">
           <div className="max-w-2xl">
             <span className="inline-flex items-center text-sm font-medium text-gray-600 uppercase tracking-wide mb-6">
               Budujemy z pasją od 2009 roku
