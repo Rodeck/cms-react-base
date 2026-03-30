@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "O nas | Jeżyk Remonty",
   description:
-    "Poznaj firmę Jeżyk Remonty. Ponad 15 lat doświadczenia w budownictwie i remontach. Profesjonalizm i jakość na każdym etapie.",
+    "Poznaj firmę Jeżyk Remonty. Ponad 15 lat doświadczenia w budownictwie. Budowa, wykończenia pod klucz i sprzedaż domów.",
 };
 
 const values = [
@@ -107,7 +107,7 @@ const team = [
     name: "Piotr Wiśniewski",
     role: "Główny majster",
     description:
-      "15 lat doświadczenia w remontach i wykończeniach. Ekspert od instalacji.",
+      "15 lat doświadczenia w budownictwie i wykończeniach. Ekspert od instalacji.",
   },
 ];
 
@@ -130,17 +130,17 @@ export default function AboutPage() {
               </h1>
               <p className="text-lg text-gray-600 leading-relaxed mb-8">
                 Jesteśmy rodzinną firmą z wieloletnim doświadczeniem w branży
-                budowlanej. Specjalizujemy się w budowie domów, remontach
-                generalnych oraz sprzedaży gotowych nieruchomości. Naszym celem
+                budowlanej. Specjalizujemy się w budowie domów, wykończeniach
+                pod klucz oraz sprzedaży gotowych nieruchomości. Naszym celem
                 jest dostarczanie usług najwyższej jakości, które spełniają
                 oczekiwania nawet najbardziej wymagających klientów.
               </p>
               <div className="flex gap-4">
                 <Link
-                  href="/realizacje"
+                  href="/domy-na-sprzedaz"
                   className="inline-flex items-center px-6 py-3 bg-black text-white font-medium rounded-full hover:bg-gray-800 transition-colors"
                 >
-                  Zobacz nasze realizacje
+                  Zobacz naszą ofertę
                 </Link>
                 <Link
                   href="/kontakt?service=Inne&message=Dzie%C5%84%20dobry%2C%20prosz%C4%99%20o%20kontakt%20w%20sprawie%20wsp%C3%B3%C5%82pracy."
@@ -220,8 +220,8 @@ export default function AboutPage() {
                   każdego klienta.
                 </p>
                 <p>
-                  Przez lata zrealizowaliśmy ponad 200 projektów - od małych
-                  remontów po kompleksowe budowy domów jednorodzinnych. Każdy
+                  Przez lata zrealizowaliśmy ponad 200 projektów — od wykończeń
+                  pod klucz po kompleksowe budowy domów jednorodzinnych. Każdy
                   projekt traktujemy jako wyzwanie i okazję do pokazania naszych
                   umiejętności.
                 </p>
@@ -239,7 +239,7 @@ export default function AboutPage() {
                   Początek działalności
                 </h3>
                 <p className="text-gray-600">
-                  Założenie firmy i pierwsze projekty remontowe w Warszawie.
+                  Założenie firmy i pierwsze projekty budowlane w Warszawie.
                 </p>
               </div>
               <div className="bg-white p-8 rounded-2xl shadow-sm">

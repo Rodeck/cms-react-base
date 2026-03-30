@@ -8,8 +8,7 @@ import { usePathname } from "next/navigation";
 const navLinks = [
   { href: "/", label: "Strona główna" },
   { href: "/o-nas", label: "O nas" },
-  { href: "/realizacje", label: "Realizacje" },
-  { href: "/domy-na-sprzedaz", label: "Domy na sprzedaż" },
+{ href: "/domy-na-sprzedaz", label: "Domy na sprzedaż" },
   { href: "/kontakt", label: "Kontakt" },
 ];
 
@@ -28,7 +27,7 @@ export default function Navigation() {
             </div>
             <div className="hidden sm:block">
               <span className="text-xl font-bold text-gray-900">Jeżyk Remonty</span>
-              <p className="text-xs text-gray-500">Budowa • Remonty • Sprzedaż</p>
+              <p className="text-xs text-gray-500">Budowa • Wykończenia • Sprzedaż</p>
             </div>
           </Link>
 
