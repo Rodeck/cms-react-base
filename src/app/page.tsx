@@ -1,4 +1,5 @@
 import Link from "next/link";
+import PromoVideo from "@/components/PromoVideo";
 
 const services = [
   {
@@ -192,13 +193,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="aspect-video rounded-3xl overflow-hidden bg-black">
-              <video
-                controls
-                preload="metadata"
-                className="w-full h-full object-cover"
-              >
-                <source src="/promo_video.mp4#t=2" type="video/mp4" />
-              </video>
+              <PromoVideo />
             </div>
             <div>
               <span className="inline-block px-4 py-2 bg-black text-white text-sm font-medium rounded-full mb-6">
