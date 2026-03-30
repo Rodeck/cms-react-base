@@ -21,8 +21,8 @@ const contactInfo = [
       </svg>
     ),
     title: "Telefon",
-    content: ["+48 123 456 789"],
-    link: "tel:+48123456789",
+    content: ["+48 530-222-266"],
+    link: "tel:+48530222266",
   },
   {
     icon: (
@@ -41,27 +41,8 @@ const contactInfo = [
       </svg>
     ),
     title: "Email",
-    content: ["kontakt@jezykremonty.pl"],
-    link: "mailto:kontakt@jezykremonty.pl",
-  },
-  {
-    icon: (
-      <svg
-        className="w-6 h-6"
-        fill="none"
-        stroke="currentColor"
-        viewBox="0 0 24 24"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={1.5}
-          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-        />
-      </svg>
-    ),
-    title: "Godziny pracy",
-    content: ["Pon - Pt: 8:00 - 18:00", "Sob: 9:00 - 14:00"],
+    content: ["jezyk.remonty@interia.pl"],
+    link: "mailto:jezyk.remonty@interia.pl",
   },
 ];
 
@@ -292,7 +273,7 @@ export default function ContactPageClient() {
                           value={formData.phone}
                           onChange={handleChange}
                           className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-black focus:border-transparent transition-all"
-                          placeholder="+48 123 456 789"
+                          placeholder="+48 530-222-266"
                         />
                       </div>
                       <div>

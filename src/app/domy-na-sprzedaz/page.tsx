@@ -441,7 +441,7 @@ export default async function HousesForSalePage() {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a
-              href="tel:+48123456789"
+              href="tel:+48530222266"
               className="inline-flex items-center justify-center px-8 py-4 bg-white text-gray-900 font-medium rounded-full hover:bg-gray-100 transition-colors"
             >
               <svg

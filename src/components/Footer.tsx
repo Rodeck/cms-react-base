@@ -83,10 +83,10 @@ export default function Footer() {
                   />
                 </svg>
                 <a
-                  href="tel:+48123456789"
+                  href="tel:+48530222266"
                   className="text-gray-400 hover:text-white transition-colors text-sm"
                 >
-                  +48 123 456 789
+                  +48 530-222-266
                 </a>
               </li>
               <li className="flex items-center gap-3">
@@ -104,10 +104,10 @@ export default function Footer() {
                   />
                 </svg>
                 <a
-                  href="mailto:kontakt@jezykremonty.pl"
+                  href="mailto:jezyk.remonty@interia.pl"
                   className="text-gray-400 hover:text-white transition-colors text-sm"
                 >
-                  kontakt@jezykremonty.pl
+                  jezyk.remonty@interia.pl
                 </a>
               </li>
             </ul>

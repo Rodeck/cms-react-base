@@ -74,57 +74,56 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative min-h-[32vh] flex items-center bg-gradient-to-br from-gray-50 to-gray-100">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 right-0 w-1/2 h-full opacity-30 rounded-l-3xl overflow-hidden">
-            <img
-              src="/main-page-image.jpg"
-              alt="Nowoczesny dom"
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </div>
-
+      <section className="relative bg-gradient-to-br from-gray-50 to-gray-100">
         <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-7">
-          <div className="max-w-2xl">
-            <span className="inline-flex items-center text-sm font-medium text-gray-600 uppercase tracking-wide mb-6">
-              Budujemy z pasją od 2009 roku
-            </span>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6">
-              Twój wymarzony dom
-              <span className="block text-gray-500">w profesjonalnych rękach</span>
-            </h1>
-            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-              Specjalizujemy się w budowie i sprzedaży domów oraz wykończeniach
-              pod klucz. Każdy projekt realizujemy z najwyższą starannością
-              i dbałością o detale — od fundamentów po gotowy do zamieszkania dom.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/kontakt?service=Wycena%20prac&message=Dzie%C5%84%20dobry%2C%20prosz%C4%99%20o%20bezp%C5%82atn%C4%85%20wycen%C4%99%20prac."
-                className="inline-flex items-center justify-center px-8 py-4 bg-black text-white font-medium rounded-full hover:bg-gray-800 transition-colors"
-              >
-                Bezpłatna wycena
-                <svg
-                  className="ml-2 w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
+          <div className="grid lg:grid-cols-2 gap-8 items-end">
+            <div>
+              <span className="inline-flex items-center text-sm font-medium text-gray-600 uppercase tracking-wide mb-6">
+                Budujemy z pasją od 2009 roku
+              </span>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6">
+                Twój wymarzony dom
+                <span className="block text-gray-500">w profesjonalnych rękach</span>
+              </h1>
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                Specjalizujemy się w budowie i sprzedaży domów oraz wykończeniach
+                pod klucz. Każdy projekt realizujemy z najwyższą starannością
+                i dbałością o detale — od fundamentów po gotowy do zamieszkania dom.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="/kontakt?service=Wycena%20prac&message=Dzie%C5%84%20dobry%2C%20prosz%C4%99%20o%20bezp%C5%82atn%C4%85%20wycen%C4%99%20prac."
+                  className="inline-flex items-center justify-center px-8 py-4 bg-black text-white font-medium rounded-full hover:bg-gray-800 transition-colors"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17 8l4 4m0 0l-4 4m4-4H3"
-                  />
-                </svg>
-              </Link>
-              <Link
-                href="/domy-na-sprzedaz"
-                className="inline-flex items-center justify-center px-8 py-4 border-2 border-gray-900 text-gray-900 font-medium rounded-full hover:bg-gray-900 hover:text-white transition-colors"
-              >
-                Zobacz ofertę
-              </Link>
+                  Bezpłatna wycena
+                  <svg
+                    className="ml-2 w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </Link>
+                <Link
+                  href="/domy-na-sprzedaz"
+                  className="inline-flex items-center justify-center px-8 py-4 border-2 border-gray-900 text-gray-900 font-medium rounded-full hover:bg-gray-900 hover:text-white transition-colors"
+                >
+                  Zobacz ofertę
+                </Link>
+              </div>
+            </div>
+            <div className="hidden lg:block rounded-3xl overflow-hidden">
+              <img
+                src="/main-page-image.jpg"
+                alt="Nowoczesny dom"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
         </div>
@@ -177,7 +176,7 @@ export default function Home() {
                 </div>
                 <div className="aspect-[4/3] bg-gray-700 rounded-2xl overflow-hidden">
                   <img
-                    src="/dom-2.webp"
+                    src="/dom-2.jpg"
                     alt="Dom na sprzedaż 2"
                     className="w-full h-full object-cover"
                   />
@@ -193,13 +192,13 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="aspect-video rounded-3xl overflow-hidden bg-black">
-              <iframe
-                src="https://www.youtube.com/embed/VIDEO_ID"
-                title="Jeżyk Remonty - film"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full"
-              />
+              <video
+                controls
+                preload="metadata"
+                className="w-full h-full object-cover"
+              >
+                <source src="/promo_video.mp4#t=2" type="video/mp4" />
+              </video>
             </div>
             <div>
               <span className="inline-block px-4 py-2 bg-black text-white text-sm font-medium rounded-full mb-6">
@@ -209,33 +208,19 @@ export default function Home() {
                 Polecana przez znanego
                 <span className="block text-gray-500">żużlowca</span>
               </h2>
+              <blockquote className="text-2xl md:text-3xl font-bold text-gray-900 italic mb-6">
+                &ldquo;Jeżyk buduje, Pawełczak rekomenduje&rdquo;
+              </blockquote>
               <p className="text-lg text-gray-600 leading-relaxed mb-6">
                 Nasza firma cieszy się zaufaniem znanych sportowców. Jakość
                 naszych domów i profesjonalizm wykonania doceniają nawet
                 najbardziej wymagający klienci.
               </p>
-              <div className="flex items-center gap-4 p-6 bg-white rounded-2xl shadow-sm">
-                <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center flex-shrink-0">
-                  <svg
-                    className="w-8 h-8 text-gray-400"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <p className="font-semibold text-gray-900 text-lg">
-                    Imię i nazwisko
-                  </p>
-                  <p className="text-gray-500">Żużlowiec</p>
-                </div>
+              <div className="p-6 bg-white rounded-2xl shadow-sm">
+                <p className="font-semibold text-gray-900 text-lg">
+                  Maks Pawełczak
+                </p>
+                <p className="text-gray-500">Żużlowiec</p>
               </div>
             </div>
           </div>
@@ -309,7 +294,7 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a
-              href="tel:+48123456789"
+              href="tel:+48530222266"
               className="inline-flex items-center justify-center px-8 py-4 bg-black text-white font-medium rounded-full hover:bg-gray-800 transition-colors"
             >
               <svg
@@ -325,7 +310,7 @@ export default function Home() {
                   d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                 />
               </svg>
-              +48 123 456 789
+              +48 530-222-266
             </a>
             <Link
               href="/kontakt?service=Inne&message=Dzie%C5%84%20dobry%2C%20prosz%C4%99%20o%20kontakt%20w%20sprawie%20mojego%20zapytania."

@@ -328,7 +328,7 @@ export default async function ListingDetailPage({ params }: PageProps) {
                   </p>
                   <div className="space-y-3">
                     <a
-                      href="tel:+48123456789"
+                      href="tel:+48530222266"
                       className="flex items-center gap-3 text-white hover:text-gray-300 transition-colors"
                     >
                       <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center">
@@ -348,11 +348,11 @@ export default async function ListingDetailPage({ params }: PageProps) {
                       </div>
                       <div>
                         <div className="text-sm text-gray-400">Zadzwoń</div>
-                        <div className="font-medium">+48 123 456 789</div>
+                        <div className="font-medium">+48 530-222-266</div>
                       </div>
                     </a>
                     <a
-                      href="mailto:kontakt@jezykremonty.pl"
+                      href="mailto:jezyk.remonty@interia.pl"
                       className="flex items-center gap-3 text-white hover:text-gray-300 transition-colors"
                     >
                       <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center">
@@ -372,7 +372,7 @@ export default async function ListingDetailPage({ params }: PageProps) {
                       </div>
                       <div>
                         <div className="text-sm text-gray-400">Email</div>
-                        <div className="font-medium">kontakt@jezykremonty.pl</div>
+                        <div className="font-medium">jezyk.remonty@interia.pl</div>
                       </div>
                     </a>
                   </div>
