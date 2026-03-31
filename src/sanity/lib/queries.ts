@@ -44,6 +44,11 @@ export const listingBySlugQuery = groq`
     description,
     mainImage,
     gallery,
+    "videos": videos[]{
+      _key,
+      title,
+      "url": file.asset->url
+    },
     publishedAt
   }
 `;

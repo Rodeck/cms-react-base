@@ -106,11 +106,12 @@ export default async function ListingDetailPage({ params }: PageProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Left Column - Images & Description */}
-            <div className="lg:col-span-2 space-y-8">
+            <div className="lg:col-span-2 space-y-8 min-w-0">
               {/* Image Gallery */}
               <ImageGallery
                 mainImage={listing.mainImage}
                 gallery={listing.gallery}
+                videos={listing.videos}
                 title={listing.title}
               />
 
@@ -311,7 +312,7 @@ export default async function ListingDetailPage({ params }: PageProps) {
                   {listing.status !== "sold" && (
                     <Link
                       href={contactHref}
-                      className="w-full inline-flex items-center justify-center px-6 py-4 bg-black text-white font-medium rounded-full hover:bg-gray-800 transition-colors"
+                      className="w-full inline-flex items-center justify-center px-6 py-4 bg-amber-600 text-white font-medium rounded-full hover:bg-amber-700 transition-colors"
                     >
                       Zapytaj o nieruchomość
                     </Link>
@@ -395,7 +396,7 @@ export default async function ListingDetailPage({ params }: PageProps) {
             </div>
             <Link
               href={contactHref}
-              className="inline-flex items-center px-6 py-3 bg-black text-white font-medium rounded-full hover:bg-gray-800 transition-colors"
+              className="inline-flex items-center px-6 py-3 bg-amber-600 text-white font-medium rounded-full hover:bg-amber-700 transition-colors"
             >
               Zapytaj o dom
             </Link>

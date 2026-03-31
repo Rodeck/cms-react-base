@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "O nas | Jeżyk Remonty",
   description:
-    "Poznaj firmę Jeżyk Remonty. Ponad 15 lat doświadczenia w budownictwie. Budowa, wykończenia pod klucz i sprzedaż domów.",
+    "Poznaj firmę Jeżyk Remonty. Ponad 30 lat doświadczenia w budownictwie. Budowa, wykończenia pod klucz i sprzedaż domów.",
 };
 
 const values = [
@@ -115,17 +115,17 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
+      <section className="py-20 bg-gradient-to-br from-amber-50 to-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="inline-block px-4 py-2 bg-black text-white text-sm font-medium rounded-full mb-6">
+              <span className="inline-block px-4 py-2 bg-amber-600 text-white text-sm font-medium rounded-full mb-6">
                 O firmie
               </span>
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
                 Jeżyk Remonty
                 <span className="block text-gray-500 text-3xl md:text-4xl mt-2">
-                  Budujemy z pasją od 2009 roku
+                  Budujemy z pasją od 1995 roku
                 </span>
               </h1>
               <p className="text-lg text-gray-600 leading-relaxed mb-8">
@@ -165,7 +165,7 @@ export default function AboutPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <span className="text-sm font-medium text-gray-500 uppercase tracking-wider">
+            <span className="text-sm font-medium text-amber-600 uppercase tracking-wider">
               Nasze wartości
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
@@ -180,7 +180,7 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
               <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mx-auto mb-6 text-gray-900">
+                <div className="w-16 h-16 bg-amber-50 rounded-2xl flex items-center justify-center mx-auto mb-6 text-amber-700">
                   {value.icon}
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">
@@ -198,15 +198,15 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="text-sm font-medium text-gray-500 uppercase tracking-wider">
+              <span className="text-sm font-medium text-amber-600 uppercase tracking-wider">
                 Nasza historia
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2 mb-6">
-                Ponad 15 lat budowania zaufania
+                Ponad 30 lat budowania zaufania
               </h2>
               <div className="space-y-6 text-gray-600">
                 <p>
-                  Firma Jeżyk Remonty została założona w 2009 roku przez rodzinę
+                  Firma Jeżyk Remonty została założona w 1995 roku przez rodzinę
                   z wielopokoleniowymi tradycjami budowlanymi. Od samego
                   początku stawialiśmy na jakość i indywidualne podejście do
                   każdego klienta.
@@ -226,16 +226,16 @@ export default function AboutPage() {
             </div>
             <div className="space-y-6">
               <div className="bg-white p-8 rounded-2xl shadow-sm">
-                <div className="text-4xl font-bold text-gray-900 mb-2">2009</div>
+                <div className="text-4xl font-bold text-gray-900 mb-2">1995</div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
                   Początek działalności
                 </h3>
                 <p className="text-gray-600">
-                  Założenie firmy i pierwsze projekty budowlane w Warszawie.
+                  Założenie firmy i pierwsze projekty budowlane.
                 </p>
               </div>
               <div className="bg-white p-8 rounded-2xl shadow-sm">
-                <div className="text-4xl font-bold text-gray-900 mb-2">2015</div>
+                <div className="text-4xl font-bold text-gray-900 mb-2">2010</div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
                   Rozszerzenie działalności
                 </h3>
@@ -245,9 +245,9 @@ export default function AboutPage() {
                 </p>
               </div>
               <div className="bg-white p-8 rounded-2xl shadow-sm">
-                <div className="text-4xl font-bold text-gray-900 mb-2">2024</div>
+                <div className="text-4xl font-bold text-gray-900 mb-2">2025</div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  15 lat na rynku
+                  30 lat na rynku
                 </h3>
                 <p className="text-gray-600">
                   Ponad 200 zrealizowanych projektów i setki zadowolonych
@@ -260,7 +260,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-black text-white">
+      <section className="py-20 bg-gradient-to-r from-gray-900 to-amber-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Gotowy na współpracę?

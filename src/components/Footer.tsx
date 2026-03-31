@@ -9,8 +9,8 @@ export default function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center flex-shrink-0">
-                <Image src="/logo.svg" alt="Jeżyk Remonty" width={36} height={28} />
+              <div className="w-20 h-20 flex items-center justify-center flex-shrink-0">
+                <Image src="/logo.svg" alt="Jeżyk Remonty" width={80} height={80} className="invert brightness-200" />
               </div>
               <div>
                 <span className="text-xl font-bold">Jeżyk Remonty</span>
@@ -18,7 +18,7 @@ export default function Footer() {
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
               Budowa, wykończenia pod klucz i sprzedaż domów gotowych do
-              zamieszkania. Działamy z pasją od ponad 15 lat.
+              zamieszkania. Działamy z pasją od 1995 roku.
             </p>
           </div>
 

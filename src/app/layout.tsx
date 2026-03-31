@@ -43,7 +43,7 @@ export default function RootLayout({
     <html lang="pl">
       <body className={`${inter.variable} font-sans antialiased`}>
         <Navigation />
-        <main className="pt-20">{children}</main>
+        <main className="pt-22">{children}</main>
         <Footer />
         <SanityLive />
       </body>

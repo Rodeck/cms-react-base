@@ -3,27 +3,47 @@
 import { useState } from "react";
 import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { urlFor } from "@/sanity/lib/image";
+import type { ListingVideo } from "@/sanity/types/listing";
+
+type GalleryItem =
+  | { type: "image"; source: SanityImageSource }
+  | { type: "video"; url: string; title?: string };
 
 interface ImageGalleryProps {
   mainImage?: SanityImageSource;
   gallery?: SanityImageSource[];
+  videos?: ListingVideo[];
   title: string;
 }
 
 export default function ImageGallery({
   mainImage,
   gallery,
+  videos,
   title,
 }: ImageGalleryProps) {
-  const allImages = [
-    ...(mainImage ? [mainImage] : []),
-    ...(gallery || []),
+  const videoItems: GalleryItem[] = (videos || [])
+    .filter((v) => v.url)
+    .map((v) => ({
+      type: "video" as const,
+      url: v.url,
+      title: v.title,
+    }));
+  const galleryImages: GalleryItem[] = (gallery || []).map((img) => ({
+    type: "image" as const,
+    source: img,
+  }));
+
+  const items: GalleryItem[] = [
+    ...(mainImage ? [{ type: "image" as const, source: mainImage }] : []),
+    ...videoItems,
+    ...galleryImages,
   ];
 
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
-  if (allImages.length === 0) {
+  if (items.length === 0) {
     return (
       <div className="aspect-[16/10] bg-gray-200 rounded-2xl placeholder-image">
         <svg
@@ -43,69 +63,105 @@ export default function ImageGallery({
     );
   }
 
+  const current = items[selectedIndex];
+
   return (
     <>
-      <div className="space-y-4">
-        {/* Main Image */}
+      <div className="space-y-4 overflow-hidden">
+        {/* Main Display */}
         <div
-          className="aspect-[16/10] bg-gray-200 rounded-2xl overflow-hidden cursor-pointer relative group"
-          onClick={() => setIsLightboxOpen(true)}
+          className="bg-gray-200 rounded-2xl overflow-hidden cursor-pointer relative group"
+          onClick={() => current.type === "image" && setIsLightboxOpen(true)}
         >
-          <img
-            src={urlFor(allImages[selectedIndex]).width(1200).height(750).url()}
-            alt={`${title} - Zdjęcie ${selectedIndex + 1}`}
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-            <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/90 rounded-full p-3">
-              <svg
-                className="w-6 h-6 text-gray-900"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
-                />
-              </svg>
-            </div>
-          </div>
-          {allImages.length > 1 && (
+          {current.type === "image" ? (
+            <>
+              <img
+                src={urlFor(current.source).width(1200).url()}
+                alt={`${title} - Zdjęcie ${selectedIndex + 1}`}
+                className="w-full max-w-full rounded-2xl"
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity bg-white/90 rounded-full p-3">
+                  <svg
+                    className="w-6 h-6 text-gray-900"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </>
+          ) : (
+            <video
+              src={current.url}
+              controls
+              className="w-full max-w-full rounded-2xl"
+              playsInline
+            >
+              Twoja przeglądarka nie obsługuje odtwarzania wideo.
+            </video>
+          )}
+          {items.length > 1 && (
             <div className="absolute bottom-4 right-4 bg-black/70 text-white text-sm px-3 py-1 rounded-full">
-              {selectedIndex + 1} / {allImages.length}
+              {selectedIndex + 1} / {items.length}
             </div>
           )}
         </div>
 
         {/* Thumbnails */}
-        {allImages.length > 1 && (
+        {items.length > 1 && (
           <div className="flex gap-3 overflow-x-auto pb-2">
-            {allImages.map((image, index) => (
+            {items.map((item, index) => (
               <button
                 key={index}
                 onClick={() => setSelectedIndex(index)}
-                className={`flex-shrink-0 w-24 h-24 rounded-xl overflow-hidden transition-all ${
+                className={`flex-shrink-0 w-24 h-24 rounded-xl overflow-hidden transition-all relative ${
                   selectedIndex === index
                     ? "ring-2 ring-black ring-offset-2"
                     : "opacity-70 hover:opacity-100"
                 }`}
               >
-                <img
-                  src={urlFor(image).width(200).height(200).url()}
-                  alt={`${title} - Miniatura ${index + 1}`}
-                  className="w-full h-full object-cover"
-                />
+                {item.type === "image" ? (
+                  <img
+                    src={urlFor(item.source).width(200).height(200).url()}
+                    alt={`${title} - Miniatura ${index + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="w-full h-full relative">
+                    <video
+                      src={`${item.url}#t=0.5`}
+                      preload="metadata"
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+                      <svg
+                        className="w-8 h-8 text-white drop-shadow-lg"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </div>
+                  </div>
+                )}
               </button>
             ))}
           </div>
         )}
       </div>
 
-      {/* Lightbox */}
-      {isLightboxOpen && (
+      {/* Lightbox (images only) */}
+      {isLightboxOpen && current.type === "image" && (
         <div
           className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center"
           onClick={() => setIsLightboxOpen(false)}
@@ -132,13 +188,13 @@ export default function ImageGallery({
           </button>
 
           {/* Navigation */}
-          {allImages.length > 1 && (
+          {items.length > 1 && (
             <>
               <button
                 onClick={(e) => {
                   e.stopPropagation();
                   setSelectedIndex((prev) =>
-                    prev === 0 ? allImages.length - 1 : prev - 1
+                    prev === 0 ? items.length - 1 : prev - 1
                   );
                 }}
                 className="absolute left-4 text-white/70 hover:text-white transition-colors p-2"
@@ -162,7 +218,7 @@ export default function ImageGallery({
                 onClick={(e) => {
                   e.stopPropagation();
                   setSelectedIndex((prev) =>
-                    prev === allImages.length - 1 ? 0 : prev + 1
+                    prev === items.length - 1 ? 0 : prev + 1
                   );
                 }}
                 className="absolute right-4 text-white/70 hover:text-white transition-colors p-2"
@@ -185,22 +241,34 @@ export default function ImageGallery({
             </>
           )}
 
-          {/* Image */}
+          {/* Lightbox Content */}
           <div
             className="max-w-[90vw] max-h-[90vh]"
             onClick={(e) => e.stopPropagation()}
           >
-            <img
-              src={urlFor(allImages[selectedIndex]).width(1920).height(1080).url()}
-              alt={`${title} - Zdjęcie ${selectedIndex + 1}`}
-              className="max-w-full max-h-[90vh] object-contain"
-            />
+            {items[selectedIndex].type === "image" ? (
+              <img
+                src={urlFor((items[selectedIndex] as { type: "image"; source: SanityImageSource }).source).width(1920).url()}
+                alt={`${title} - Zdjęcie ${selectedIndex + 1}`}
+                className="max-w-full max-h-[90vh] object-contain"
+              />
+            ) : (
+              <video
+                src={(items[selectedIndex] as { type: "video"; url: string }).url}
+                controls
+                autoPlay
+                className="max-w-full max-h-[90vh]"
+                playsInline
+              >
+                Twoja przeglądarka nie obsługuje odtwarzania wideo.
+              </video>
+            )}
           </div>
 
           {/* Counter */}
-          {allImages.length > 1 && (
+          {items.length > 1 && (
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/70 text-sm">
-              {selectedIndex + 1} / {allImages.length}
+              {selectedIndex + 1} / {items.length}
             </div>
           )}
         </div>

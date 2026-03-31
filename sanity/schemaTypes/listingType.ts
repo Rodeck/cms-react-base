@@ -2,12 +2,12 @@ import {defineField, defineType} from 'sanity'
 
 export const listingType = defineType({
   name: 'listing',
-  title: 'House Listing',
+  title: 'Ogłoszenie',
   type: 'document',
   fields: [
     defineField({
       name: 'title',
-      title: 'Listing Title',
+      title: 'Tytuł ogłoszenia',
       type: 'string',
       validation: (rule) => rule.required(),
     }),
@@ -20,20 +20,20 @@ export const listingType = defineType({
     }),
     defineField({
       name: 'price',
-      title: 'Price',
+      title: 'Cena',
       type: 'number',
       validation: (rule) => rule.required().positive(),
     }),
     defineField({
       name: 'status',
-      title: 'Listing Status',
+      title: 'Status',
       type: 'string',
       options: {
         list: [
-          {title: 'For Sale', value: 'for-sale'},
-          {title: 'Sold', value: 'sold'},
-          {title: 'Pending', value: 'pending'},
-          {title: 'Reserved', value: 'reserved'},
+          {title: 'Na sprzedaż', value: 'for-sale'},
+          {title: 'Sprzedany', value: 'sold'},
+          {title: 'W trakcie', value: 'pending'},
+          {title: 'Rezerwacja', value: 'reserved'},
         ],
         layout: 'radio',
       },
@@ -41,47 +41,47 @@ export const listingType = defineType({
     }),
     defineField({
       name: 'propertyType',
-      title: 'Property Type',
+      title: 'Typ nieruchomości',
       type: 'string',
       options: {
         list: [
-          {title: 'House', value: 'house'},
-          {title: 'Apartment', value: 'apartment'},
-          {title: 'Townhouse', value: 'townhouse'},
-          {title: 'Land', value: 'land'},
-          {title: 'Commercial', value: 'commercial'},
+          {title: 'Dom', value: 'house'},
+          {title: 'Mieszkanie', value: 'apartment'},
+          {title: 'Bliźniak', value: 'townhouse'},
+          {title: 'Działka', value: 'land'},
+          {title: 'Komercyjny', value: 'commercial'},
         ],
       },
     }),
     defineField({
       name: 'location',
-      title: 'Location',
+      title: 'Lokalizacja',
       type: 'object',
       fields: [
         defineField({
           name: 'street',
-          title: 'Street Address',
+          title: 'Ulica',
           type: 'string',
         }),
         defineField({
           name: 'city',
-          title: 'City',
+          title: 'Miasto',
           type: 'string',
           validation: (rule) => rule.required(),
         }),
         defineField({
           name: 'postCode',
-          title: 'Post Code',
+          title: 'Kod pocztowy',
           type: 'string',
         }),
         defineField({
           name: 'region',
-          title: 'Region / State',
+          title: 'Województwo',
           type: 'string',
         }),
         defineField({
           name: 'country',
-          title: 'Country',
+          title: 'Kraj',
           type: 'string',
           initialValue: 'Poland',
         }),
@@ -89,41 +89,41 @@ export const listingType = defineType({
     }),
     defineField({
       name: 'details',
-      title: 'Property Details',
+      title: 'Szczegóły nieruchomości',
       type: 'object',
       fields: [
         defineField({
           name: 'bedrooms',
-          title: 'Bedrooms',
+          title: 'Pokoje',
           type: 'number',
           validation: (rule) => rule.min(0),
         }),
         defineField({
           name: 'bathrooms',
-          title: 'Bathrooms',
+          title: 'Łazienki',
           type: 'number',
           validation: (rule) => rule.min(0),
         }),
         defineField({
           name: 'area',
-          title: 'Area (m²)',
+          title: 'Powierzchnia (m²)',
           type: 'number',
           validation: (rule) => rule.positive(),
         }),
         defineField({
           name: 'lotSize',
-          title: 'Lot Size (m²)',
+          title: 'Powierzchnia działki (m²)',
           type: 'number',
           validation: (rule) => rule.positive(),
         }),
         defineField({
           name: 'yearBuilt',
-          title: 'Year Built',
+          title: 'Rok budowy',
           type: 'number',
         }),
         defineField({
           name: 'floors',
-          title: 'Number of Floors',
+          title: 'Liczba pięter',
           type: 'number',
           validation: (rule) => rule.min(1),
         }),
@@ -131,33 +131,35 @@ export const listingType = defineType({
     }),
     defineField({
       name: 'features',
-      title: 'Features',
+      title: 'Udogodnienia',
       type: 'array',
       of: [{type: 'string'}],
       options: {
         list: [
-          {title: 'Garage', value: 'garage'},
-          {title: 'Garden', value: 'garden'},
-          {title: 'Balcony', value: 'balcony'},
-          {title: 'Terrace', value: 'terrace'},
-          {title: 'Basement', value: 'basement'},
-          {title: 'Air Conditioning', value: 'air-conditioning'},
-          {title: 'Central Heating', value: 'central-heating'},
-          {title: 'Fireplace', value: 'fireplace'},
-          {title: 'Pool', value: 'pool'},
-          {title: 'Security System', value: 'security-system'},
+          {title: 'Garaż', value: 'garage'},
+          {title: 'Ogród', value: 'garden'},
+          {title: 'Balkon', value: 'balcony'},
+          {title: 'Taras', value: 'terrace'},
+          {title: 'Piwnica', value: 'basement'},
+          {title: 'Klimatyzacja', value: 'air-conditioning'},
+          {title: 'Ogrzewanie centralne', value: 'central-heating'},
+          {title: 'Kominek', value: 'fireplace'},
+          {title: 'System alarmowy', value: 'security-system'},
+          {title: 'Pompa ciepła', value: 'heat-pump'},
+          {title: 'Ogrzewanie podłogowe', value: 'floor-heating'},
+          {title: 'Zmiękczacz wody', value: 'water-softener'},
         ],
       },
     }),
     defineField({
       name: 'description',
-      title: 'Description',
+      title: 'Opis',
       type: 'array',
       of: [{type: 'block'}],
     }),
     defineField({
       name: 'mainImage',
-      title: 'Main Image',
+      title: 'Zdjęcie główne',
       type: 'image',
       options: {
         hotspot: true,
@@ -165,7 +167,7 @@ export const listingType = defineType({
     }),
     defineField({
       name: 'gallery',
-      title: 'Image Gallery',
+      title: 'Galeria zdjęć',
       type: 'array',
       of: [
         {
@@ -177,8 +179,42 @@ export const listingType = defineType({
       ],
     }),
     defineField({
+      name: 'videos',
+      title: 'Filmy',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          name: 'video',
+          title: 'Film',
+          fields: [
+            defineField({
+              name: 'title',
+              title: 'Tytuł filmu',
+              type: 'string',
+            }),
+            defineField({
+              name: 'file',
+              title: 'Plik wideo',
+              type: 'file',
+              options: {
+                accept: 'video/*',
+              },
+              validation: (rule) => rule.required(),
+            }),
+          ],
+          preview: {
+            select: {title: 'title'},
+            prepare({title}) {
+              return {title: title || 'Film'}
+            },
+          },
+        },
+      ],
+    }),
+    defineField({
       name: 'publishedAt',
-      title: 'Published At',
+      title: 'Data publikacji',
       type: 'datetime',
       initialValue: () => new Date().toISOString(),
     }),

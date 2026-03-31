@@ -65,7 +65,7 @@ const services = [
 ];
 
 const stats = [
-  { number: "15+", label: "Lat doświadczenia" },
+  { number: "30+", label: "Lat doświadczenia" },
   { number: "200+", label: "Zrealizowanych projektów" },
   { number: "150+", label: "Zadowolonych klientów" },
   { number: "50+", label: "Sprzedanych domów" },
@@ -75,12 +75,12 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-gray-50 to-gray-100">
+      <section className="relative bg-gradient-to-br from-amber-50 to-gray-100">
         <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-7">
           <div className="grid lg:grid-cols-2 gap-8 items-end">
             <div>
-              <span className="inline-flex items-center text-sm font-medium text-gray-600 uppercase tracking-wide mb-6">
-                Budujemy z pasją od 2009 roku
+              <span className="inline-flex items-center text-sm font-medium text-amber-700 uppercase tracking-wide mb-6">
+                Budujemy z pasją od 1995 roku
               </span>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-6">
                 Twój wymarzony dom
@@ -94,7 +94,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/kontakt?service=Wycena%20prac&message=Dzie%C5%84%20dobry%2C%20prosz%C4%99%20o%20bezp%C5%82atn%C4%85%20wycen%C4%99%20prac."
-                  className="inline-flex items-center justify-center px-8 py-4 bg-black text-white font-medium rounded-full hover:bg-gray-800 transition-colors"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-amber-600 text-white font-medium rounded-full hover:bg-amber-700 transition-colors"
                 >
                   Bezpłatna wycena
                   <svg
@@ -196,7 +196,7 @@ export default function Home() {
               <PromoVideo />
             </div>
             <div>
-              <span className="inline-block px-4 py-2 bg-black text-white text-sm font-medium rounded-full mb-6">
+              <span className="inline-block px-4 py-2 bg-amber-600 text-white text-sm font-medium rounded-full mb-6">
                 Rekomendacja
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-6">
@@ -223,12 +223,12 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-black text-white">
+      <section className="py-16 bg-gradient-to-r from-gray-900 to-amber-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold mb-2">
+                <div className="text-4xl md:text-5xl font-bold mb-2 text-amber-400">
                   {stat.number}
                 </div>
                 <div className="text-gray-400 text-sm md:text-base">
@@ -244,7 +244,7 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <span className="text-sm font-medium text-gray-500 uppercase tracking-wider">
+            <span className="text-sm font-medium text-amber-600 uppercase tracking-wider">
               Nasze usługi
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-2">
@@ -260,7 +260,7 @@ export default function Home() {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="group p-8 bg-gray-50 rounded-2xl hover:bg-black transition-all duration-300"
+                className="group p-8 bg-gray-50 rounded-2xl hover:bg-amber-600 transition-all duration-300"
               >
                 <div className="text-gray-900 group-hover:text-white transition-colors mb-6">
                   {service.icon}
@@ -290,7 +290,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <a
               href="tel:+48530222266"
-              className="inline-flex items-center justify-center px-8 py-4 bg-black text-white font-medium rounded-full hover:bg-gray-800 transition-colors"
+              className="inline-flex items-center justify-center px-8 py-4 bg-amber-600 text-white font-medium rounded-full hover:bg-amber-700 transition-colors"
             >
               <svg
                 className="mr-2 w-5 h-5"

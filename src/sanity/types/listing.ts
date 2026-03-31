@@ -30,8 +30,16 @@ export type ListingFeature =
   | "air-conditioning"
   | "central-heating"
   | "fireplace"
-  | "pool"
-  | "security-system";
+  | "security-system"
+  | "heat-pump"
+  | "floor-heating"
+  | "water-softener";
+
+export interface ListingVideo {
+  _key: string;
+  url: string;
+  title?: string;
+}
 
 export interface Listing {
   _id: string;
@@ -51,6 +59,7 @@ export interface Listing {
   description?: PortableTextBlock[];
   mainImage?: SanityImageSource;
   gallery?: SanityImageSource[];
+  videos?: ListingVideo[];
   publishedAt?: string;
 }
 
@@ -64,8 +73,10 @@ export const featureTranslations: Record<ListingFeature, string> = {
   "air-conditioning": "Klimatyzacja",
   "central-heating": "Ogrzewanie centralne",
   fireplace: "Kominek",
-  pool: "Basen",
   "security-system": "System alarmowy",
+  "heat-pump": "Pompa ciepła",
+  "floor-heating": "Ogrzewanie podłogowe",
+  "water-softener": "Zmiękczacz wody",
 };
 
 // Status translations for Polish UI

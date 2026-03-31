@@ -119,9 +119,9 @@ export default function ContactPageClient() {
   return (
     <>
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
+      <section className="py-20 bg-gradient-to-br from-amber-50 to-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="inline-block px-4 py-2 bg-black text-white text-sm font-medium rounded-full mb-6">
+          <span className="inline-block px-4 py-2 bg-amber-600 text-white text-sm font-medium rounded-full mb-6">
             Kontakt
           </span>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
@@ -146,7 +146,7 @@ export default function ContactPageClient() {
               <div className="space-y-6">
                 {contactInfo.map((info, index) => (
                   <div key={index} className="flex gap-4">
-                    <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center flex-shrink-0 text-gray-900">
+                    <div className="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center flex-shrink-0 text-amber-700">
                       {info.icon}
                     </div>
                     <div>
@@ -234,7 +234,7 @@ export default function ContactPageClient() {
                           value={formData.name}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-black focus:border-transparent transition-all"
+                          className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-600 focus:border-transparent transition-all"
                           placeholder="Jan Kowalski"
                         />
                       </div>
@@ -252,7 +252,7 @@ export default function ContactPageClient() {
                           value={formData.email}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-black focus:border-transparent transition-all"
+                          className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-600 focus:border-transparent transition-all"
                           placeholder="jan@example.com"
                         />
                       </div>
@@ -272,7 +272,7 @@ export default function ContactPageClient() {
                           name="phone"
                           value={formData.phone}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-black focus:border-transparent transition-all"
+                          className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-600 focus:border-transparent transition-all"
                           placeholder="+48 530-222-266"
                         />
                       </div>
@@ -289,7 +289,7 @@ export default function ContactPageClient() {
                           value={formData.service}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-black focus:border-transparent transition-all"
+                          className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-600 focus:border-transparent transition-all"
                         >
                           <option value="">Wybierz temat</option>
                           {services.map((service) => (
@@ -315,7 +315,7 @@ export default function ContactPageClient() {
                         onChange={handleChange}
                         required
                         rows={5}
-                        className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-black focus:border-transparent transition-all resize-none"
+                        className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-amber-600 focus:border-transparent transition-all resize-none"
                         placeholder="Opisz swój projekt lub zadaj pytanie..."
                       ></textarea>
                     </div>
@@ -325,7 +325,7 @@ export default function ContactPageClient() {
                         type="checkbox"
                         id="consent"
                         required
-                        className="mt-1 w-4 h-4 rounded border-gray-300 text-black focus:ring-black"
+                        className="mt-1 w-4 h-4 rounded border-gray-300 text-black focus:ring-amber-600"
                       />
                       <label htmlFor="consent" className="text-sm text-gray-600">
                         Wyrażam zgodę na przetwarzanie moich danych osobowych w
@@ -336,7 +336,7 @@ export default function ContactPageClient() {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full md:w-auto inline-flex items-center justify-center px-8 py-4 bg-black text-white font-medium rounded-full hover:bg-gray-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full md:w-auto inline-flex items-center justify-center px-8 py-4 bg-amber-600 text-white font-medium rounded-full hover:bg-amber-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {isSubmitting ? (
                         <>

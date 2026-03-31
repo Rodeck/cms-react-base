@@ -40,11 +40,11 @@ export default async function HousesForSalePage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
+      <section className="py-20 bg-gradient-to-br from-amber-50 to-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="inline-block px-4 py-2 bg-black text-white text-sm font-medium rounded-full mb-6">
+              <span className="inline-block px-4 py-2 bg-amber-600 text-white text-sm font-medium rounded-full mb-6">
                 Na sprzedaż
               </span>
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
@@ -57,19 +57,19 @@ export default async function HousesForSalePage() {
                 natychmiastowego zamieszkania. Gwarantujemy wysoką jakość i
                 profesjonalne wykonanie.
               </p>
-              <div className="flex items-center gap-8 text-sm">
+              <div className="flex flex-wrap items-center gap-6 sm:gap-8 text-sm">
                 <div>
                   <span className="text-3xl font-bold text-gray-900">
                     {availableCount}
                   </span>
                   <p className="text-gray-500">Dostępnych domów</p>
                 </div>
-                <div className="h-12 w-px bg-gray-300"></div>
+                <div className="h-12 w-px bg-gray-300 hidden sm:block"></div>
                 <div>
                   <span className="text-3xl font-bold text-gray-900">100%</span>
                   <p className="text-gray-500">Wykończenia</p>
                 </div>
-                <div className="h-12 w-px bg-gray-300"></div>
+                <div className="h-12 w-px bg-gray-300 hidden sm:block"></div>
                 <div>
                   <span className="text-3xl font-bold text-gray-900">5 lat</span>
                   <p className="text-gray-500">Gwarancji</p>
@@ -312,7 +312,7 @@ export default async function HousesForSalePage() {
                             {formatPrice(house.price)}
                           </div>
                           <span
-                            className="inline-flex items-center px-6 py-3 bg-black text-white font-medium rounded-full group-hover:bg-gray-800 transition-colors"
+                            className="inline-flex items-center px-6 py-3 bg-amber-600 text-white font-medium rounded-full group-hover:bg-amber-700 transition-colors"
                           >
                             Zobacz szczegóły
                             <svg
@@ -430,7 +430,7 @@ export default async function HousesForSalePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-black text-white">
+      <section className="py-20 bg-gradient-to-r from-gray-900 to-amber-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Zainteresowany którąś z nieruchomości?

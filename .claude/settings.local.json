@@ -15,7 +15,8 @@
       "mcp__Sanity__list_workspace_schemas",
       "mcp__Sanity__patch_document_from_json",
       "mcp__Sanity__get_document",
-      "mcp__Sanity__discard_drafts"
+      "mcp__Sanity__discard_drafts",
+      "Bash(ls D:/projects/jezyk-remonty/package.json D:/projects/jezyk-remonty/next.config.*)"
     ]
   }
 }

@@ -19,15 +19,15 @@ export default function Navigation() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-22">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-full overflow-hidden bg-white flex items-center justify-center">
-              <Image src="/logo.svg" alt="Jeżyk Remonty" width={48} height={48} />
+            <div className="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center flex-shrink-0">
+              <Image src="/logo.svg" alt="Jeżyk Remonty" width={64} height={64} />
             </div>
-            <div className="hidden sm:block">
-              <span className="text-xl font-bold text-gray-900">Jeżyk Remonty</span>
-              <p className="text-xs text-gray-500">Budowa • Wykończenia • Sprzedaż</p>
+            <div>
+              <span className="text-base sm:text-xl font-bold text-gray-900">Jeżyk Remonty</span>
+              <p className="text-[10px] sm:text-xs text-gray-500 hidden sm:block">Budowa • Wykończenia • Sprzedaż</p>
             </div>
           </Link>
 
@@ -39,7 +39,7 @@ export default function Navigation() {
                 href={link.href}
                 className={`text-sm font-medium transition-colors hover:text-gray-900 ${
                   pathname === link.href
-                    ? "text-gray-900 border-b-2 border-black pb-1"
+                    ? "text-gray-900 border-b-2 border-amber-600 pb-1"
                     : "text-gray-600"
                 }`}
               >
@@ -52,7 +52,7 @@ export default function Navigation() {
           <div className="hidden md:block">
             <Link
               href="/kontakt"
-              className="bg-black text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-gray-800 transition-colors"
+              className="bg-amber-600 text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-amber-700 transition-colors"
             >
               Bezpłatna wycena
             </Link>
@@ -110,7 +110,7 @@ export default function Navigation() {
               <Link
                 href="/kontakt"
                 onClick={() => setIsOpen(false)}
-                className="bg-black text-white px-6 py-3 rounded-full text-center font-medium hover:bg-gray-800 transition-colors mt-2"
+                className="bg-amber-600 text-white px-6 py-3 rounded-full text-center font-medium hover:bg-amber-700 transition-colors mt-2"
               >
                 Bezpłatna wycena
               </Link>
