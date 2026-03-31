@@ -44,18 +44,15 @@ export default async function HousesForSalePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="inline-block px-4 py-2 bg-amber-600 text-white text-sm font-medium rounded-full mb-6">
-                Na sprzedaż
-              </span>
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
                 Gotowe domy
                 <span className="block text-gray-500">na sprzedaż</span>
               </h1>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Odkryj naszą ofertę gotowych domów w atrakcyjnych lokalizacjach.
-                Wszystkie nieruchomości są wykończone pod klucz i gotowe do
-                natychmiastowego zamieszkania. Gwarantujemy wysoką jakość i
-                profesjonalne wykonanie.
+                Odkryj naszą ofertę domów w atrakcyjnych lokalizacjach. W ofercie
+                znajdziesz domy gotowe do zamieszkania, jak i nieruchomości
+                do samodzielnego wykończenia. Gwarantujemy wysoką jakość
+                i profesjonalne wykonanie.
               </p>
               <div className="flex flex-wrap items-center gap-6 sm:gap-8 text-sm">
                 <div>

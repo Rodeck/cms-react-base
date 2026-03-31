@@ -143,9 +143,8 @@ export default function Home() {
                   Gotowe domy na sprzedaż
                 </h2>
                 <p className="text-gray-300 mb-6 leading-relaxed">
-                  Odkryj naszą ofertę gotowych domów w atrakcyjnych lokalizacjach.
-                  Wszystkie nieruchomości są wykończone pod klucz i gotowe do
-                  zamieszkania.
+                  Odkryj naszą ofertę domów w atrakcyjnych lokalizacjach —
+                  gotowych do zamieszkania lub do samodzielnego wykończenia.
                 </p>
                 <Link
                   href="/domy-na-sprzedaz"

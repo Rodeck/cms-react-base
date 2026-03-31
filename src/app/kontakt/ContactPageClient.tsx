@@ -389,61 +389,6 @@ export default function ContactPageClient() {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900">
-              Najczęściej zadawane pytania
-            </h2>
-          </div>
-          <div className="space-y-4">
-            {[
-              {
-                q: "Jak długo trwa budowa domu?",
-                a: "Standardowa budowa domu jednorodzinnego trwa od 6 do 12 miesięcy, w zależności od wielkości i stopnia skomplikowania projektu.",
-              },
-              {
-                q: "Czy udzielacie gwarancji na wykonane prace?",
-                a: "Tak, na wszystkie prace budowlane udzielamy 5-letniej gwarancji. Na elementy wykończeniowe gwarancja wynosi 2 lata.",
-              },
-              {
-                q: "Ile kosztuje wycena projektu?",
-                a: "Wstępna wycena jest całkowicie bezpłatna. Szczegółowy kosztorys przygotowujemy po zapoznaniu się z dokumentacją projektu.",
-              },
-              {
-                q: "Czy pomagacie w uzyskaniu pozwolenia na budowę?",
-                a: "Tak, oferujemy pełną pomoc w procesie uzyskiwania niezbędnych pozwoleń i dokumentacji budowlanej.",
-              },
-            ].map((faq, index) => (
-              <details
-                key={index}
-                className="group bg-gray-50 rounded-2xl overflow-hidden"
-              >
-                <summary className="flex items-center justify-between p-6 cursor-pointer list-none">
-                  <h3 className="font-semibold text-gray-900 pr-4">{faq.q}</h3>
-                  <svg
-                    className="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </summary>
-                <div className="px-6 pb-6">
-                  <p className="text-gray-600">{faq.a}</p>
-                </div>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
     </>
   );
 }
