@@ -37,7 +37,8 @@ export type ListingFeature =
 
 export interface ListingVideo {
   _key: string;
-  url: string;
+  url?: string;
+  youtubeUrl?: string;
   title?: string;
 }
 

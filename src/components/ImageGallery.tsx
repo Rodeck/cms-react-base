@@ -7,7 +7,32 @@ import type { ListingVideo } from "@/sanity/types/listing";
 
 type GalleryItem =
   | { type: "image"; source: SanityImageSource }
-  | { type: "video"; url: string; title?: string };
+  | { type: "video"; url: string; title?: string }
+  | { type: "youtube"; embedUrl: string; title?: string };
+
+function getYouTubeEmbedUrl(url: string): string {
+  let videoId = "";
+  if (url.includes("youtu.be/")) {
+    videoId = url.split("youtu.be/")[1]?.split(/[?&#]/)[0] || "";
+  } else if (url.includes("youtube.com/watch")) {
+    videoId = new URL(url).searchParams.get("v") || "";
+  } else if (url.includes("youtube.com/embed/")) {
+    videoId = url.split("youtube.com/embed/")[1]?.split(/[?&#]/)[0] || "";
+  }
+  return `https://www.youtube.com/embed/${videoId}`;
+}
+
+function getYouTubeThumbnail(url: string): string {
+  let videoId = "";
+  if (url.includes("youtu.be/")) {
+    videoId = url.split("youtu.be/")[1]?.split(/[?&#]/)[0] || "";
+  } else if (url.includes("youtube.com/watch")) {
+    videoId = new URL(url).searchParams.get("v") || "";
+  } else if (url.includes("youtube.com/embed/")) {
+    videoId = url.split("youtube.com/embed/")[1]?.split(/[?&#]/)[0] || "";
+  }
+  return `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
+}
 
 interface ImageGalleryProps {
   mainImage?: SanityImageSource;
@@ -23,12 +48,21 @@ export default function ImageGallery({
   title,
 }: ImageGalleryProps) {
   const videoItems: GalleryItem[] = (videos || [])
-    .filter((v) => v.url)
-    .map((v) => ({
-      type: "video" as const,
-      url: v.url,
-      title: v.title,
-    }));
+    .filter((v) => v.url || v.youtubeUrl)
+    .map((v): GalleryItem => {
+      if (v.youtubeUrl) {
+        return {
+          type: "youtube" as const,
+          embedUrl: getYouTubeEmbedUrl(v.youtubeUrl),
+          title: v.title,
+        };
+      }
+      return {
+        type: "video" as const,
+        url: v.url!,
+        title: v.title,
+      };
+    });
   const galleryImages: GalleryItem[] = (gallery || []).map((img) => ({
     type: "image" as const,
     source: img,
@@ -72,6 +106,7 @@ export default function ImageGallery({
         <div
           className="bg-gray-200 rounded-2xl overflow-hidden cursor-pointer relative group"
           onClick={() => current.type === "image" && setIsLightboxOpen(true)}
+          role={current.type === "image" ? "button" : undefined}
         >
           {current.type === "image" ? (
             <>
@@ -98,6 +133,16 @@ export default function ImageGallery({
                 </div>
               </div>
             </>
+          ) : current.type === "youtube" ? (
+            <div className="aspect-video">
+              <iframe
+                src={current.embedUrl}
+                title={current.title || "Film YouTube"}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full rounded-2xl"
+              />
+            </div>
           ) : (
             <video
               src={current.url}
@@ -134,6 +179,23 @@ export default function ImageGallery({
                     alt={`${title} - Miniatura ${index + 1}`}
                     className="w-full h-full object-cover"
                   />
+                ) : item.type === "youtube" ? (
+                  <div className="w-full h-full relative">
+                    <img
+                      src={getYouTubeThumbnail(item.embedUrl)}
+                      alt={item.title || "Film YouTube"}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+                      <svg
+                        className="w-8 h-8 text-red-600 drop-shadow-lg"
+                        fill="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </div>
+                  </div>
                 ) : (
                   <div className="w-full h-full relative">
                     <video
@@ -161,7 +223,7 @@ export default function ImageGallery({
       </div>
 
       {/* Lightbox (images only) */}
-      {isLightboxOpen && current.type === "image" && (
+      {isLightboxOpen && (current.type === "image" || current.type === "youtube") && (
         <div
           className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center"
           onClick={() => setIsLightboxOpen(false)}
@@ -252,6 +314,16 @@ export default function ImageGallery({
                 alt={`${title} - Zdjęcie ${selectedIndex + 1}`}
                 className="max-w-full max-h-[90vh] object-contain"
               />
+            ) : items[selectedIndex].type === "youtube" ? (
+              <div className="w-[80vw] max-w-[1280px] aspect-video">
+                <iframe
+                  src={(items[selectedIndex] as { type: "youtube"; embedUrl: string }).embedUrl + "?autoplay=1"}
+                  title={title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full rounded-xl"
+                />
+              </div>
             ) : (
               <video
                 src={(items[selectedIndex] as { type: "video"; url: string }).url}

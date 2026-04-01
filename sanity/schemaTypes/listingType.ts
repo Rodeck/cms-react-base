@@ -200,13 +200,43 @@ export const listingType = defineType({
               options: {
                 accept: 'video/*',
               },
-              validation: (rule) => rule.required(),
+              description: 'Prześlij plik wideo lub podaj link do YouTube poniżej',
+            }),
+            defineField({
+              name: 'youtubeUrl',
+              title: 'Link do YouTube',
+              type: 'url',
+              description: 'Np. https://www.youtube.com/watch?v=... lub https://youtu.be/...',
+              validation: (rule) =>
+                rule.uri({scheme: ['https']}).custom((url) => {
+                  if (!url) return true
+                  if (
+                    url.includes('youtube.com/watch') ||
+                    url.includes('youtu.be/') ||
+                    url.includes('youtube.com/embed/')
+                  ) {
+                    return true
+                  }
+                  return 'Podaj prawidłowy link do YouTube'
+                }),
             }),
           ],
+          validation: (rule) =>
+            rule.custom((video) => {
+              if (!video) return true
+              const v = video as {file?: unknown; youtubeUrl?: string}
+              if (!v.file && !v.youtubeUrl) {
+                return 'Dodaj plik wideo lub link do YouTube'
+              }
+              return true
+            }),
           preview: {
-            select: {title: 'title'},
-            prepare({title}) {
-              return {title: title || 'Film'}
+            select: {title: 'title', youtubeUrl: 'youtubeUrl'},
+            prepare({title, youtubeUrl}) {
+              return {
+                title: title || 'Film',
+                subtitle: youtubeUrl ? 'YouTube' : 'Plik wideo',
+              }
             },
           },
         },
