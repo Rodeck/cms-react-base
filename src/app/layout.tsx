@@ -4,6 +4,7 @@ import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { SanityLive } from "@/sanity/lib/live";
+import { Analytics } from "@vercel/analytics/next";
 
 const inter = Inter({
   subsets: ["latin", "latin-ext"],
@@ -46,6 +47,7 @@ export default function RootLayout({
         <main className="pt-22">{children}</main>
         <Footer />
         <SanityLive />
+        <Analytics />
       </body>
     </html>
   );
