@@ -133,7 +133,7 @@ export default function Home() {
       {/* Houses for Sale Preview */}
       <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-8 md:p-12 text-white">
+          <div className="bg-gradient-to-br from-gray-700 to-gray-600 rounded-3xl p-8 md:p-12 text-white">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <span className="text-sm font-medium text-gray-400 uppercase tracking-wider">
@@ -182,7 +182,7 @@ export default function Home() {
                   className="block aspect-[4/3] bg-gray-700 rounded-2xl overflow-hidden"
                 >
                   <img
-                    src="/dom-2.jpg"
+                    src="/image-blizniak.webp"
                     alt="Dom na sprzedaż 2"
                     className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                   />
@@ -228,7 +228,7 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-gradient-to-r from-gray-900 to-amber-900 text-white">
+      <section className="py-16 bg-gradient-to-r from-gray-700 to-amber-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (

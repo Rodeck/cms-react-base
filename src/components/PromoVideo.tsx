@@ -3,7 +3,7 @@
 export default function PromoVideo() {
   return (
     <iframe
-      src="https://www.youtube.com/embed/VIDEO_ID_HERE"
+      src="https://www.youtube.com/embed/ED4FRbQKMpo"
       title="Film promocyjny"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen

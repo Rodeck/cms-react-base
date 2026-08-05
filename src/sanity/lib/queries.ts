@@ -47,7 +47,8 @@ export const listingBySlugQuery = groq`
     "videos": videos[]{
       _key,
       title,
-      "url": file.asset->url
+      "url": file.asset->url,
+      youtubeUrl
     },
     publishedAt
   }

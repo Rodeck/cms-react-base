@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { sanityFetch } from "@/sanity/lib/live";
 import { urlFor } from "@/sanity/lib/image";
@@ -40,21 +39,17 @@ export default async function HousesForSalePage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-amber-50 to-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
+      <section className="py-12 bg-gradient-to-br from-amber-50 to-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+              <h1 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-4">
                 Gotowe domy
-                <span className="block text-gray-500">na sprzedaż</span>
+                <span className="text-gray-500"> na sprzedaż</span>
               </h1>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Odkryj naszą ofertę domów w atrakcyjnych lokalizacjach. W ofercie
-                znajdziesz domy gotowe do zamieszkania, jak i nieruchomości
-                do samodzielnego wykończenia. Gwarantujemy wysoką jakość
-                i profesjonalne wykonanie.
+              <p className="text-base text-gray-600 mb-6 leading-relaxed max-w-2xl mx-auto">
+                Odkryj naszą ofertę domów w atrakcyjnych lokalizacjach. Gwarantujemy
+                wysoką jakość i profesjonalne wykonanie.
               </p>
-              <div className="flex flex-wrap items-center gap-6 sm:gap-8 text-sm">
+              <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-sm">
                 <div>
                   <span className="text-3xl font-bold text-gray-900">
                     {availableCount}
@@ -72,17 +67,6 @@ export default async function HousesForSalePage() {
                   <p className="text-gray-500">Gwarancji</p>
                 </div>
               </div>
-            </div>
-            <div className="aspect-[4/3] rounded-3xl overflow-hidden relative">
-              <Image
-                src="/dom-3.jpg"
-                alt="Domy na sprzedaż"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
-          </div>
         </div>
       </section>
 
@@ -390,11 +374,12 @@ export default async function HousesForSalePage() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Pod klucz
+                Elastyczna oferta
               </h3>
               <p className="text-gray-600">
-                Wszystkie domy są wykończone i gotowe do zamieszkania. Nie
-                musisz martwić się o dodatkowe prace.
+                Wybierz dom wykończony pod klucz, w stanie deweloperskim
+                lub skorzystaj z naszej usługi wykończenia dostosowanego
+                do Twoich indywidualnych potrzeb.
               </p>
             </div>
 
@@ -427,7 +412,7 @@ export default async function HousesForSalePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-gray-900 to-amber-900 text-white">
+      <section className="py-20 bg-gradient-to-r from-gray-700 to-amber-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Zainteresowany którąś z nieruchomości?
