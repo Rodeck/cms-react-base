@@ -41,8 +41,8 @@ const contactInfo = [
       </svg>
     ),
     title: "Email",
-    content: ["jezyk.remonty@interia.pl"],
-    link: "mailto:jezyk.remonty@interia.pl",
+    content: ["kontakt@jezykbuduje.pl"],
+    link: "mailto:kontakt@jezykbuduje.pl",
   },
 ];
 

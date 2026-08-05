@@ -11,7 +11,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Jeżyk Remonty | Budowa, Wykończenia, Sprzedaż Domów",
+  title: "Jeżyk Buduje | Budowa, Wykończenia, Sprzedaż Domów",
   description:
     "Budowa domów, wykończenia pod klucz oraz sprzedaż gotowych nieruchomości. Domy gotowe do zamieszkania. Zaufaj doświadczeniu!",
   keywords: [
@@ -21,12 +21,12 @@ export const metadata: Metadata = {
     "domy na sprzedaż",
     "usługi budowlane",
   ],
-  authors: [{ name: "Jeżyk Remonty" }],
+  authors: [{ name: "Jeżyk Buduje" }],
   icons: {
     icon: "/logo.svg",
   },
   openGraph: {
-    title: "Jeżyk Remonty | Budowa, Wykończenia, Sprzedaż Domów",
+    title: "Jeżyk Buduje | Budowa, Wykończenia, Sprzedaż Domów",
     description:
       "Budowa domów, wykończenia pod klucz oraz sprzedaż gotowych nieruchomości. Domy gotowe do zamieszkania.",
     locale: "pl_PL",

@@ -23,10 +23,10 @@ export default function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
             <div className="w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center flex-shrink-0">
-              <Image src="/logo.svg" alt="Jeżyk Remonty" width={64} height={64} />
+              <Image src="/logo.svg" alt="Jeżyk Buduje" width={64} height={64} />
             </div>
             <div>
-              <span className="text-base sm:text-xl font-bold text-gray-900">Jeżyk Remonty</span>
+              <span className="text-base sm:text-xl font-bold text-gray-900">Jeżyk Buduje</span>
               <p className="text-[10px] sm:text-xs text-gray-500 hidden sm:block">Budowa • Wykończenia • Sprzedaż</p>
             </div>
           </Link>

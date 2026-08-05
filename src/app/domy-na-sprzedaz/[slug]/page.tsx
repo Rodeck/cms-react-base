@@ -32,13 +32,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!listing) {
     return {
-      title: "Nie znaleziono | Jeżyk Remonty",
+      title: "Nie znaleziono | Jeżyk Buduje",
     };
   }
 
   return {
-    title: `${listing.title} | Domy na sprzedaż | Jeżyk Remonty`,
-    description: `${listing.title} - ${listing.location.city}. ${listing.details?.area ? `${listing.details.area} m²` : ""} ${formatPrice(listing.price)}. Gotowy dom na sprzedaż od Jeżyk Remonty.`,
+    title: `${listing.title} | Domy na sprzedaż | Jeżyk Buduje`,
+    description: `${listing.title} - ${listing.location.city}. ${listing.details?.area ? `${listing.details.area} m²` : ""} ${formatPrice(listing.price)}. Gotowy dom na sprzedaż od Jeżyk Buduje.`,
   };
 }
 
@@ -353,7 +353,7 @@ export default async function ListingDetailPage({ params }: PageProps) {
                       </div>
                     </a>
                     <a
-                      href="mailto:jezyk.remonty@interia.pl"
+                      href="mailto:kontakt@jezykbuduje.pl"
                       className="flex items-center gap-3 text-white hover:text-gray-300 transition-colors"
                     >
                       <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center">
@@ -373,7 +373,7 @@ export default async function ListingDetailPage({ params }: PageProps) {
                       </div>
                       <div>
                         <div className="text-sm text-gray-400">Email</div>
-                        <div className="font-medium">jezyk.remonty@interia.pl</div>
+                        <div className="font-medium">kontakt@jezykbuduje.pl</div>
                       </div>
                     </a>
                   </div>

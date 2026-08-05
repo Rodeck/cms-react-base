@@ -10,10 +10,10 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-20 h-20 flex items-center justify-center flex-shrink-0">
-                <Image src="/logo.svg" alt="Jeżyk Remonty" width={80} height={80} className="invert brightness-200" />
+                <Image src="/logo.svg" alt="Jeżyk Buduje" width={80} height={80} className="invert brightness-200" />
               </div>
               <div>
-                <span className="text-xl font-bold">Jeżyk Remonty</span>
+                <span className="text-xl font-bold">Jeżyk Buduje</span>
               </div>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
@@ -104,10 +104,10 @@ export default function Footer() {
                   />
                 </svg>
                 <a
-                  href="mailto:jezyk.remonty@interia.pl"
+                  href="mailto:kontakt@jezykbuduje.pl"
                   className="text-gray-400 hover:text-white transition-colors text-sm"
                 >
-                  jezyk.remonty@interia.pl
+                  kontakt@jezykbuduje.pl
                 </a>
               </li>
             </ul>
@@ -118,7 +118,7 @@ export default function Footer() {
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-500 text-sm">
-              © {new Date().getFullYear()} Jeżyk Remonty. Wszelkie prawa
+              © {new Date().getFullYear()} Jeżyk Buduje. Wszelkie prawa
               zastrzeżone.
             </p>
           </div>

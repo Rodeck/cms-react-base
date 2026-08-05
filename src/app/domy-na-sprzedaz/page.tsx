@@ -11,9 +11,9 @@ import {
 } from "@/sanity/types/listing";
 
 export const metadata: Metadata = {
-  title: "Domy na sprzedaż | Jeżyk Remonty",
+  title: "Domy na sprzedaż | Jeżyk Buduje",
   description:
-    "Gotowe domy na sprzedaż od Jeżyk Remonty. Nowe budownictwo, wykończenie pod klucz, atrakcyjne lokalizacje.",
+    "Gotowe domy na sprzedaż od Jeżyk Buduje. Nowe budownictwo, wykończenie pod klucz, atrakcyjne lokalizacje.",
 };
 
 function formatPrice(price: number): string {

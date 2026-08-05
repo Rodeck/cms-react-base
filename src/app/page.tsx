@@ -167,20 +167,26 @@ export default function Home() {
                 </Link>
               </div>
               <div className="grid grid-cols-2 gap-4">
-                <div className="aspect-[4/3] bg-gray-700 rounded-2xl overflow-hidden">
+                <Link
+                  href="/domy-na-sprzedaz"
+                  className="block aspect-[4/3] bg-gray-700 rounded-2xl overflow-hidden"
+                >
                   <img
                     src="/dom-1.jpg"
                     alt="Dom na sprzedaż 1"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                   />
-                </div>
-                <div className="aspect-[4/3] bg-gray-700 rounded-2xl overflow-hidden">
+                </Link>
+                <Link
+                  href="/domy-na-sprzedaz"
+                  className="block aspect-[4/3] bg-gray-700 rounded-2xl overflow-hidden"
+                >
                   <img
                     src="/dom-2.jpg"
                     alt="Dom na sprzedaż 2"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                   />
-                </div>
+                </Link>
               </div>
             </div>
           </div>

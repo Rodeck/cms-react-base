@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "O nas | Jeżyk Remonty",
+  title: "O nas | Jeżyk Buduje",
   description:
-    "Poznaj firmę Jeżyk Remonty. Ponad 30 lat doświadczenia w budownictwie. Budowa, wykończenia pod klucz i sprzedaż domów.",
+    "Poznaj firmę Jeżyk Buduje. Ponad 30 lat doświadczenia w budownictwie. Budowa, wykończenia pod klucz i sprzedaż domów.",
 };
 
 const values = [
@@ -123,7 +123,7 @@ export default function AboutPage() {
                 O firmie
               </span>
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
-                Jeżyk Remonty
+                Jeżyk Buduje
                 <span className="block text-gray-500 text-3xl md:text-4xl mt-2">
                   Budujemy z pasją od 1995 roku
                 </span>
@@ -153,7 +153,7 @@ export default function AboutPage() {
             <div className="aspect-[4/3] rounded-3xl overflow-hidden">
               <img
                 src="/dom-4.jpg"
-                alt="Realizacja Jeżyk Remonty"
+                alt="Realizacja Jeżyk Buduje"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -206,7 +206,7 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-6 text-gray-600">
                 <p>
-                  Firma Jeżyk Remonty została założona w 1995 roku przez rodzinę
+                  Firma Jeżyk Buduje została założona w 1995 roku przez rodzinę
                   z wielopokoleniowymi tradycjami budowlanymi. Od samego
                   początku stawialiśmy na jakość i indywidualne podejście do
                   każdego klienta.
