@@ -206,7 +206,7 @@ export default function Home() {
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-6">
                 Polecana przez znanego
-                <span className="block text-gray-500">żużlowca</span> - Mistrza Polski
+                <span className="block text-gray-500">żużlowca – Mistrza Polski</span>
               </h2>
               <blockquote className="text-2xl md:text-3xl font-bold text-gray-900 italic mb-6">
                 &ldquo;Jeżyk buduje, Pawełczak rekomenduje&rdquo;
