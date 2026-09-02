@@ -1,13 +1,14 @@
 import { groq } from "next-sanity";
 
-// Fetch all listings ordered by status: for-sale first, then reserved, pending, sold last
+// Fetch all listings ordered by status: for-sale first, then coming-soon, reserved, pending, sold last
 export const listingsQuery = groq`
   *[_type == "listing"] | order(
     select(
       status == "for-sale" => 0,
-      status == "reserved" => 1,
-      status == "pending" => 2,
-      status == "sold" => 3
+      status == "coming-soon" => 1,
+      status == "reserved" => 2,
+      status == "pending" => 3,
+      status == "sold" => 4
     ) asc,
     publishedAt desc
   ) {

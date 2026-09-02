@@ -18,7 +18,12 @@ export interface ListingDetails {
   floors?: number;
 }
 
-export type ListingStatus = "for-sale" | "sold" | "pending" | "reserved";
+export type ListingStatus =
+  | "for-sale"
+  | "coming-soon"
+  | "sold"
+  | "pending"
+  | "reserved";
 export type PropertyType = "house" | "apartment" | "townhouse" | "land" | "commercial";
 
 export type ListingFeature =
@@ -83,6 +88,7 @@ export const featureTranslations: Record<ListingFeature, string> = {
 // Status translations for Polish UI
 export const statusTranslations: Record<ListingStatus, string> = {
   "for-sale": "Dostępny",
+  "coming-soon": "Wkrótce dostępny",
   sold: "Sprzedany",
   pending: "W trakcie",
   reserved: "Rezerwacja",

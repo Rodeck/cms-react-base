@@ -31,6 +31,7 @@ export const listingType = defineType({
       options: {
         list: [
           {title: 'Na sprzedaż', value: 'for-sale'},
+          {title: 'Wkrótce dostępny', value: 'coming-soon'},
           {title: 'Sprzedany', value: 'sold'},
           {title: 'W trakcie', value: 'pending'},
           {title: 'Rezerwacja', value: 'reserved'},
